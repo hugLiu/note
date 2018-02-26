@@ -1,3 +1,6 @@
 重油开发公司油藏评价与储量评估协同平台
 新疆油田规划图形库二期
 深圳协同研究环境
+
+MVC mvvm webpack geotopic api geobank geofeature geomapserver jogis kettle redis mongodb 
+sqlserver oracle es
