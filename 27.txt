@@ -1,0 +1,9 @@
+重油开发公司油藏评价与储量评估协同平台
+新疆油田规划图形库二期
+深圳协同研究环境
+
+MVC mvvm webpack geotopic api geobank geofeature geomapserver jogis kettle redis mongodb 
+sqlserver oracle es openlayer3
+
+系统基于mvc架构。系统采用MVC架构的bs系统，客户端采用mvvm模式，实现UI和业务逻辑的分离。api和本地服务为系统提供服务支持。实现图件的检索及xx功能。
+数据资源采集来源于图件资源非结构化数据和油田数据中心数据库结构化数据，实现图件的检索和图件的图数联动功能。非结构化数据通过geobank产品在采集过程中为每一个图件资源附上标签信息可实现多维度的信息检索到mongodb。gf 通过采集图件，可获取图件上的地理坐标信息，实现图件图层图元的导航。中心数据库通过kettle实现数据的实时同步到oracle
