@@ -1,0 +1,44 @@
+{
+    "sentence": "xx",
+    "from": 0,
+    "size": 10,
+    "filter": {
+        "author": [
+            "张三"
+        ],
+        "pt": [
+            "钻探油气新发现情况",
+            "盆地百科"
+        ]
+    },
+    "fields": {
+        "includes": [
+            "title",
+            "createddate",
+            "pt"
+        ],
+        "excludes": [
+            "thumbnail",
+            "fulltext"
+        ]
+    },
+    "boost": {
+        "title": 10,
+        "pt": 8
+    },
+    "sort": [
+        {
+            "key": "title", "value": 0
+        },
+        {
+            "key": "pt", "value": 1
+        }
+    ],
+    "group": {
+        "top": 10,
+        "fields": [
+            "author",
+            "well"
+        ]
+    }
+}
