@@ -17,3 +17,41 @@ $ cp - i exam1.c /usr/wang/shiyan1.c
 $ cp exam1.c /usr/ wang/ 
 $ cp - r /usr/xu/ /usr/liu/ 
 将/usr/xu目录中的所有文件及其子目录拷贝到目录/usr/liu中
+
+
+4. xshell等远程无法连接
+    1. ping 192.168.0.1
+    2. ping 192.168.1.1
+    3. ping baidu.com
+
+    想在ubuntu下配置一个hadoop伪分布式，最首要的是给系统配置一个静态ip
+    1. vi /etc/network/interfaces
+    添加内容：
+
+    auto eth0
+    iface eth0 inet static
+    address 192.168.1.100
+    netmask 255.255.255.0
+    gateway 192.168.1.1(参照宿主机)
+    dns-nameserver 119.29.29.29
+
+    dns-nameserver 119.29.29.29必须有，因为以前是dhcp解析，所以会自动分配dns服务器地址
+    而一旦设置为静态ip后就没有自动获取dns服务器来，需要自己设置一个
+
+    设置完成重启电脑后，/etc/resolv.conf 文件中会自动添加 nameserver 119.29.29.29
+    可以根据访问速度，选择合适的公共dns
+
+    动态ip方法
+    1.设置虚拟机的网络设置为桥接模式
+    2. 在ubuntu下打开terminal或者命令行
+    3. 直接输入命令：sudo gedit /etc/network/interfaces
+    在弹出的gedit中编辑
+    iface eth0 inet dhcp //设置为自动获取ip
+    4.修改完成后 再输入
+    sudo gedit/etc/resolv.conf
+    在弹出的对话框中写入dns服务器，如：
+    domain localdomain
+    search localdomain
+    nameserver xx.xx.x.xx
+    5.再输入 sudo /etc/init.d/networking restart//重启网卡
+    或sudo reboot 重启系统即可
