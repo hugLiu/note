@@ -55,3 +55,6 @@ $ cp - r /usr/xu/ /usr/liu/
     nameserver xx.xx.x.xx
     5.再输入 sudo /etc/init.d/networking restart//重启网卡
     或sudo reboot 重启系统即可
+
+5. mysql数据库表导出excel
+    select × from table1 into outfile '/var/lib/mysql-files/xx.xls'
